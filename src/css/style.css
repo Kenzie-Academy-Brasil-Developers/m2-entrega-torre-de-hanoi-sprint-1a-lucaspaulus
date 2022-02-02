@@ -1,0 +1,82 @@
+@font-face {
+    font-family: dark;
+    src: url(/src/fonts/IceKingdom-Bold-PorKustren.ttf);
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/src/img/fundo-menu-jogo.png") ;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+     
+}
+
+h1{
+    font-size: 100px;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px #ffffff73;
+    font-family: dark, sans-serif;
+    text-align: center;
+ 
+}
+
+
+section{
+    display: flex;
+    justify-content: center;
+    width: 450px;
+
+}
+
+.overlay{
+    position: fixed;
+    background-color: #0000001c;
+}
+
+.botaoMenuInicial{
+    border: 3px solid #181818;
+    border-radius: 8px 20px 8px 20px;
+    max-width: 120px;
+    width: 100%;
+    margin: 15px;
+    height: 45px;
+    background-image: linear-gradient(to right, #000000f2, #000000 );
+    color: white;
+    font-size: 32px;
+    font-family: dark, sans-serif;
+}
+.botaoMenuInicial:hover{
+    border:3px solid white;
+}
+
+.hideMenu{
+    display: none;
+}
+
+ 
+.btnFullScreen{
+    margin-right: 15px;
+    align-self: flex-end;
+    top:25px;
+    right: 25px;
+    position: fixed;
+}  
+
+@keyframes  changeH1Color{
+    0%{
+        color: #000000
+    }
+
+    50%{
+        color: #ffffff
+    }
+
+    100%{
+        color:  #000000;
+    }
+}
