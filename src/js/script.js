@@ -10,10 +10,10 @@ bodyElement.appendChild(sectionMenuInicial)
 //MENU INICIAL DO JOGO
 //MUSICAS DO JOGO 
 // Adiciona musica em cada elemento usando a biblioteca do howler.js
-function musicaMenuInicial(music){
+function musicaMenuInicial(music, vol){
     let sound = new Howl({
         src: music,
-        volume: 1.0,
+        volume: vol,
     }) 
 
     return sound.play()
@@ -26,14 +26,24 @@ btnPlayMenu.classList.add("botaoMenuInicial")
 btnPlayMenu.innerText = "PLAY"
 sectionMenuInicial.appendChild(btnPlayMenu)
 
+//Muda background do jogo 
+
+function bacgroundChange(bgChange){
+    bodyElement.style.backgroundImage = bgChange
+}
 
 //Executa a função que cria o menu inicial do jogo
 btnPlayMenu.addEventListener("click", function(){
-         musicaMenuInicial(["/src/music/effects/button1.ogg"])
-         musicaMenuInicial(["/src/music/scott-buckley-i-walk-with-ghosts.mp3"])
+         musicaMenuInicial(["/src/music/effects/button1.ogg"], 0.8)
+         musicaMenuInicial(["/src/music/musicTheme.ogg"], 0.1)
          gameTitle.style.animation = "changeH1Color 7s infinite"
          criaMenuInicial()
+         
+
 })
+
+
+
 
 //Inicio da função que cria o menu inicial do jogo
 function criaMenuInicial(){
@@ -82,6 +92,8 @@ let fullScreenMode = document.getElementsByClassName("btnFullScreen")[0]
 
 
 console.log(fullScreenMode)
+
+//Adiona o modo fullscreen no jogo 
 fullScreenMode.addEventListener("click", function(){
         if(document.fullscreenElement){
             document.exitFullscreen()
@@ -90,4 +102,5 @@ fullScreenMode.addEventListener("click", function(){
         }
         
     
-}) 
+})
+
