@@ -4,69 +4,145 @@
 }
 body{
     height: 100vh;
-    /* width: 100vw; */
-    background-image: url("/src/img/menu-jogo-hanoi.gif");
+      
+}
+.logoGameImg img{
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.menuSectionContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+
+    background-image: url("/src/img/bg-menu-mobile.png");
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+
+}
+
+.menuSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+
+}
+
+.menuGameBottomContainer{
+    display: flex;
+    max-width: 500px; 
+    justify-content: center;
+}
+
+.gameSectionContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-     
+    height: 100vh;
+    margin: 0 auto;
+
+    background-image: url("/src/img/futuristic-background.gif");
+    background-size: 90% 100vh;
+    background-position: center;
+   
 }
 
-h1{
-    font-size: 85px;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px #ffffff73;
+.gameSection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 25px;
+    width: 90%;
+    max-width: 980px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.sectionBaseDisplay{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    
+    backdrop-filter: blur(2px);
+
+    text-align: center;
+}
+
+.textBase{
+    font-size: 18px;
+    font-family: dark, sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 0.8px #ffffff;
+    
+}
+.menuGameTitleContainer{
+    display: flex;
+    width: 300px;
+    height: 300px;
+
+    background-image: url("/src/img/blackHole-stoped.gif.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{ 
+
+    font-size: 50px;
     font-family: dark, sans-serif;
     text-align: center;
-    margin-top: 40px;
- 
-}
-
-
-section{
-    display: flex;
-    justify-content: center;
-    width: 450px;
+    text-shadow: 2px 2px #ffffff73;
+    margin: 0px 0;
+    
 
 }
 
- 
 .botaoMenuInicial{
+    width: 100%;
+    height: 40px;
+    max-width: 70px;
+    margin: 15px;
+
     border: 3px solid #181818; 
     border-radius: 0px 20px 5px 20px;
-    max-width: 120px;
-    width: 100%;
-    height: 45px;
-    margin: 15px;
+
     background-image: url("/src/img/textureBtn.png");
     background-size: 100%;
     background-position: center;
-    color: #939393;
-    font-size: 32px;
+   
+    font-size: 16px;
     font-family: dark, sans-serif;
+    color: #939393;
 }
+
 .botaoMenuInicial:hover{
     border:3px solid white;
 }
 
-.hideMenu{
-    display: none;
-}
-
- 
 .btnFullScreen{
     position: fixed;
-    margin-right: 15px;
-    align-self: flex-end;
-    top:25px;
-    right: 25px;
-    background-color: #383838;
-    border-radius: 2px;
-}  
+    top:15px;
+    right: 5px;
+    margin-right: 10px;
+
+}
+
+.btnFullScreen img{ 
+    width: 24px
+}
 
 @keyframes  changeH1Color{
     0%{
@@ -75,11 +151,110 @@ section{
     }
 
     50%{
-        color: #383838;
-        text-shadow: 5px 5px #00000073;
+        color: #202020;
+        text-shadow: 5px 5px #ffffff73;
     }
 
     100%{
         color:  #0f0f0f;
     }
 }
+
+@keyframes bgTransition {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+       opacity: 0;
+    }
+}
+
+
+.sectionBaseDisplayModeEasy{
+
+}
+
+.neonLightBlueDisk{
+    width: 70px;
+    height: 25px;
+    
+    border-radius: 5px;
+    border: 1px solid #010c3d;
+    box-shadow:/*  -2px -2px 13px 0px #140168  */inset -1px 16px 13px 0px #140168;
+    
+    transition: all 1s;
+
+}
+
+.neonLightOrangeDisk{
+    width: 50px;
+    height: 25px;
+    
+    border-radius: 5px;
+    border: 1px solid #3d0101;
+    box-shadow: /* -2px -2px 13px 0px #ec5a5a  */inset -1px 16px 13px 0px #ec5a5a;
+    transition: all 1s;
+}
+
+.neonLightGreenDisk{
+    width: 40px;
+    height: 25px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #083d01;
+    box-shadow: /* -2px -2px 13px 0px #7bee6c */ inset -1px 16px 13px 0px #7bee6c;
+    transition: all 10s;
+    left: 0;
+}
+
+.tower{
+    width: 15px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    background-image: url(/src/img/bgTower.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+     
+    
+}
+
+
+.towerBase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 90px;
+    max-width: 980px;
+   
+    border: 1px solid #282828;
+    box-shadow: -2px -2px 13px 0px #3a3a3a, inset -1px 16px 20px 2px #3a3a3a;
+    border-radius: 15px 15px 90px 90px;
+ 
+  
+}
+
+.boxVisorTower{
+    width: 100%;
+    max-width: 980px;
+    height: 25px;
+
+    border: 1px solid #282828;
+    box-shadow: -2px -2px 13px 0px #121212, inset -1px 16px 13px 0px #3a3a3a;
+    border-radius: 50px;
+}
+
+
+.hide{
+    display: none;
+} 
